@@ -3,7 +3,7 @@ rak_buku = ["BUKU AJAR PEMROGRAMAN WEB 1 : Iqbal Ramadhani Muklis",
             "Python Crash Course: A Hands-On, Project-Based Introduction to Programming : Eric Matthes", 
             "Responsive Web Design with HTML5 and CSS, Fourth Edition : Ben Frain",
             "Full Stack Web Development For Beginners : Riaz Ahmad", 
-            "You Dont Know JS Yet (Book Series) : Kyle Simpson"]
+            "You Dont Know JS Yet (Book Series) : Kyle Simpson"]    
 
 list_data_pinjam = []
 list_data_penjualan = []
@@ -15,7 +15,7 @@ def katalog_buku ():
         print(f"{no}. {katalog}")
         no += 1
 
-def data_peminjaman ():
+def input_peminjaman ():
     while True:
         katalog_buku()
         nama_peminjam = input("Masukkan nama anda: ")
@@ -52,7 +52,26 @@ def edit_peminjaman ():
     else:
         print("Nomor Tidak Valid")
 
-def menu_peminjaman ():
+def read_data_peminjam():
+    if not list_data_pinjam:
+        print("Tidak ada data peminjaman")
+    else:
+        print("---Data Peminjam Buku---")
+        print("ID | Nama Peminjam | Judul Buku | Tanggal Peminjaman")
+        print("-"*40)
+        for i, judul_buku in enumerate(rak_buku, start=1):
+            print(f"{i}. {judul_buku}")
+
+def hapus_peminjam():
+    katalog_buku()
+    index = int(input("Masukkan nomor data yang ingin anda hapus: "))
+    if index < 0 <= len(list_data_pinjam):
+        del list_data_pinjam[index - 1]
+        print("Data Berhasil Dihapus")
+    else:
+        print("Nomor Tidak Valid")
+
+def menu_peminjaman():
     print("1. Input Peminjaman")
     print("2. Edit Data")
     print("3. Tampilkan Data")
@@ -60,7 +79,7 @@ def menu_peminjaman ():
     
     kode  = input("Masukkan nomor: ")
     if kode == "1":
-        data_peminjaman()
+        input_peminjaman()
     elif kode == "2":
         edit_peminjaman()
     # elif kode == "3":
@@ -68,7 +87,7 @@ def menu_peminjaman ():
     else:
         print("Pilihan yang Anda masukkan salah.")
     
-def data_penjualan ():
+def input_penjualan ():
     while True:
         nama_pembeli = input("Masukkan nama anda: ")
         katalog_buku()
@@ -93,19 +112,38 @@ def menu_penjualan ():
     print("4. Hapus Data")
     kode  = input("Masukkan nomor: ")
     if kode == "1":
-        data_penjualan()
+        input_penjualan()
     # elif kode == "2":
     # elif kode == "3":
     # elif kode == "4":
     else:   
         print("Pilihan yang Anda masukkan salah.")
 
+def rekomendasi_buku():
+    print("1. Rekomendasi Buku Terlaris")
+    print("2. Rekomendasi Buku Terbaru")
+    kode = input("Masukkan nomor: ")
+    if kode == "1":
+        print("Buku Terlaris:")
+        print("1. Buku 1")
+        print("2. Buku 2")
+        print("3. Buku 3")
+    elif kode == "2":
+        print("Buku Terbaru:")
+        print("1. Buku 1")
+        print("2. Buku 2")
+        print("3. Buku 3")
+    else:
+        print("Pilihan yang Anda masukkan salah.")
+
+
+
 def menu_utama ():
     print("---APLIKASI PENJUALAN BUKU DAN PEMINJAMAN BUKU PERPUSTAKAAN---")
-    print("1. Data Penjualan")
-    print("2. Data Peminjaman")
+    print("1. Menu Penjualan")
+    print("2. Menu Peminjaman")
     print("3. Katalog Buku")
-    print("4. Rekap Data")
+    print("4. Rekomendasi Buku")
     print("5. Keluar")
     kode  = input("Masukkan nomor: ")
     if kode == "1":
@@ -113,7 +151,7 @@ def menu_utama ():
     elif kode == "2":
         menu_peminjaman()
     elif kode == "3":
-       katalog_buku()
+        katalog_buku()
     # elif kode == "4":
      
     elif kode == "5":
