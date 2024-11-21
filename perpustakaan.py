@@ -8,9 +8,6 @@ rak_buku = ["BUKU AJAR PEMROGRAMAN WEB 1 : Iqbal Ramadhani Muklis",
 list_data_pinjam = []
 list_data_penjualan = []
 
-# seluruh_rak = len(rak_buku)
-# print (" ", seluruh_rak, " ",rak_buku,)
-
 def katalog_buku ():
     print("KATALOG BUKU")
     no = 1
@@ -60,25 +57,33 @@ def menu_peminjaman ():
     print("2. Edit Data")
     print("3. Tampilkan Data")
     print("4. Hapus Data")
+    
     kode  = input("Masukkan nomor: ")
     if kode == "1":
         data_peminjaman()
     elif kode == "2":
-    elif kode == "3":
-    elif kode == "4":
+        edit_peminjaman()
+    # elif kode == "3":
+    # elif kode == "4":
     else:
         print("Pilihan yang Anda masukkan salah.")
     
 def data_penjualan ():
     while True:
         nama_pembeli = input("Masukkan nama anda: ")
+        katalog_buku()
         kode_buku = int(input("Masukkan kode buku: "))
-        judul_buku = input("Masukkan judul buku: ")
+        katalog_buku()
+        judul_buku = input("Masukkan judul buku: ").lower()
         jumlah_buku = int(input("Masukkan jumlah buku yang ingin anda beli: "))
-        jawab = input("Apakah kamu mau membeli buku lagi?:(ya/tidak) ")
+        jawab = input("Apakah kamu mau membeli buku lagi? (ya/tidak) : ")
         list_data_penjualan.append((nama_pembeli, kode_buku, judul_buku, jumlah_buku))
         if jawab != "ya":
-            break   
+            input_menu = input("Apakah kamu ingin kembali ke Menu Penjualan? (ya/tidak) : ")
+            if input_menu == "ya":
+                menu_penjualan()
+            else:
+                menu_utama()
         print("Pembelian berhasil diinput.")
 
 def menu_penjualan ():
@@ -89,13 +94,14 @@ def menu_penjualan ():
     kode  = input("Masukkan nomor: ")
     if kode == "1":
         data_penjualan()
-    elif kode == "2":
-    elif kode == "3":
-    elif kode == "4":
-    else:
+    # elif kode == "2":
+    # elif kode == "3":
+    # elif kode == "4":
+    else:   
         print("Pilihan yang Anda masukkan salah.")
 
 def menu_utama ():
+    print("---APLIKASI PENJUALAN BUKU DAN PEMINJAMAN BUKU PERPUSTAKAAN---")
     print("1. Data Penjualan")
     print("2. Data Peminjaman")
     print("3. Katalog Buku")
@@ -103,14 +109,17 @@ def menu_utama ():
     print("5. Keluar")
     kode  = input("Masukkan nomor: ")
     if kode == "1":
-        
+        menu_penjualan()
     elif kode == "2":
-        
+        menu_peminjaman()
     elif kode == "3":
-       
-    elif kode == "4":
+       katalog_buku()
+    # elif kode == "4":
      
     elif kode == "5":
-      
+        print("Terima kasih atas kunjungan ke perpustakaan kami😊🙏")
+        exit
     else:
         print("Pilihan yang Anda masukkan salah.")
+
+menu_utama()
