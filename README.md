@@ -4,4 +4,4 @@
   2. Program ini mendukung fitur dari peminjaman dan penjualan buku di sebuah perpustakaan.
   3. Dari program ini memiliki fitur pengelolaan buku penjualan dan peminjaman, baik itu dalam melakukan restock ulang sebuah buku ataupun memantau peminjaman buku yang belum dikembalikan.
   4. Lalu ada fitur untuk memonitoring berapa penjualan buku yang telah didapat dan sudah berapa banyak peminjaman telah dilakukan oleh seseorang.
-Program ini akan dikembangkan lebih lanjut, jika anda tertarik untuk berkolaborasi dengan saya silahkan kontak pribadi saya saja.
+Program ini rencananya akan dikembangkan lebih lanjut, jika anda tertarik untuk berkolaborasi dengan saya silahkan kontak pribadi saya saja.
