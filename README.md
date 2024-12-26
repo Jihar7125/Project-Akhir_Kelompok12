@@ -1,4 +1,4 @@
-# UAS-SISTEM PEMINJAMAN DAN PENJUALAN BUKU DI PERPUSTAKAAN
+# UAS ALPRO-SISTEM PEMINJAMAN DAN PENJUALAN BUKU DI PERPUSTAKAAN
 # Fitur - fitur yang Tersedia
   1. Lalu juga ada fitur untuk login terlebih dahulu saat pertama kali menjalankan program ini, user harus memilih ingin masuk sebagai pustakawan atau sebagai pengunjung.
   2. Program ini mendukung fitur dari peminjaman dan penjualan buku di sebuah perpustakaan.
